@@ -65,7 +65,7 @@ function Login({navigation}) {
       style={{height:55,width:180,backgroundColor:'black',marginTop:30,marginLeft:-45,borderRadius:24}} 
       onPress={()=>{
       alert('Successfull Login');
-      navigation.navigate('Main')}}>
+      navigation.navigate('MainTabs')}}>
         <Text style={{fontSize:35,textAlign:'center',textAlignVertical:'center',color:'#FF9100',fontWeight:200}}>
           Login
           </Text>

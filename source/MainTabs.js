@@ -1,35 +1,56 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import Main from './screen/Main';
 import Profile from './screen/Profile';
 import Fav from './screen/Fav';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import { Feather } from "@expo/vector-icons";
 const Tab = createBottomTabNavigator();
-function MainTabs() {
+
+const MainTabs = ({ }) => {
     return (
         <Tab.Navigator
-          initialRouteName="Main"
-          screenOptions={({ route }) => ({
-            tabBarIcon: () => {
-              let iconName;
-              if (route.name === 'Main') {
-                iconName = '🏠';  
-              } else if (route.name === 'Fav') {
-                iconName = '❤️';  
-              } else if (route.name === 'Profile') {
-                iconName = '👤';  
-              }
-
-              return (
-                <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Text style={{ fontSize: 20 }}>{iconName}</Text>
-                </View>
-              );
-            },
-            tabBarLabelStyle: { fontSize: 12, fontWeight: 'bold' },
-            tabBarStyle: { backgroundColor: 'green', height: 200,zIndex:2 },  
-          })}
+        initialRouteName="Main"
+            screenOptions={({ route }) => ({
+                headerShown: false,
+                tabBarIcon: ({ color }) => {
+                    let iconName;
+                    if (route.name === 'Main') {
+                        iconName='home'
+                    }
+                    else if (route.name === 'Fav') {
+                        iconName='heart';
+                    }
+                    else if (route.name === 'Profile') {
+                        return <Feather name='user' type="font-awesome" size={25} color={color}></Feather>
+                    }
+                
+                    return <View 
+                    style={{ borderRightWidth: 0.6, 
+                        borderRightColor: '#A8A8A8', 
+                        justifyContent: 'center', 
+                    alignItems: 'center', 
+                    width: 140 }}>
+                            <Feather name={iconName} type="font-awesome" size={25} color={color}></Feather>
+                        </View>
+                },
+                tabBarActiveTintColor: '#FFBC00',
+                tabBarInactiveTintColor: '#A8A8A8',
+                tabBarStyle: {
+                    position: 'absolute',
+                    borderTopWidth: 0,
+                    height: 70, // Adjust height if necessary
+                    paddingBottom: 15,
+                    paddingTop: 15,
+                    paddingHorizontal: 0,
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    backgroundColor: 'black',
+                    overflow: 'hidden', // Ensure content does not overflow
+                },
+                tabBarShowLabel: false,
+            })}
         >
           <Tab.Screen name="Main" component={Main} />
           <Tab.Screen name="Fav" component={Fav} />
