@@ -1,11 +1,13 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext,useContext } from 'react';
 import { TextInput, Text, TouchableOpacity } from 'react-native';
 import Background from './Background';
+import { UserContext } from './UserContext';
 
-export const myName = createContext(); 
+
 
 function Signup({ navigation, setInputName }) {
   const [inputName, setChangeName] = useState('');
+  const {user,setUser,email,setEmail}=useContext(UserContext);
   const [inputText, setInputText] = useState('');
   const [showHello, setShowHello] = useState(false);
   const [showPass, setShowPass] = useState(false);
@@ -14,7 +16,7 @@ function Signup({ navigation, setInputName }) {
   const equalPass = wPass === cPass;
   console.log(inputName);
   return (
-    <myName.Provider value={inputName} >
+    
       <Background>
         <TextInput 
           style={{
@@ -111,6 +113,8 @@ function Signup({ navigation, setInputName }) {
             : { height: 55, width: 180, backgroundColor: 'red', marginTop: 30, marginLeft: -45, borderRadius: 24 }} 
           onPress={() => {
             alert('Now Login with these details');
+            setUser(inputName);
+            setEmail(inputText);
             navigation.navigate('Login');
           }}
         >
@@ -124,7 +128,7 @@ function Signup({ navigation, setInputName }) {
           </Text>
         </TouchableOpacity>
       </Background>
-    </myName.Provider>
+    
   );
   
 }
