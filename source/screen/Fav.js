@@ -16,21 +16,22 @@ function Fav(props) {
         <Text 
                     style={{
                         fontSize: 45,
-                        marginTop: 10,
-                        paddingTop: 40,
+                        marginTop: 55,
+                        paddingTop: 105,
                         marginLeft: -55,
                         height: 135,
                         color: '#FF9100',
                         backgroundColor: 'black',
                         width: 500,
                         textAlign: 'center',
-                        verticalAlign: 'middle'
+                        verticalAlign: 'middle',
+                        height:200
                     }}
                 >
                     Your Favorites
                 </Text>
 
-                <ScrollView showsVerticalScrollIndicator={false} style={{ marginTop: 0, marginBottom: 70 }}>
+                <ScrollView showsVerticalScrollIndicator={false} style={{ marginTop: 0, marginBottom: 190 }}>
                     {favMovies && favMovies.length > 0 ? (
                         favMovies.map((movie) => (
                             movie.poster_path && movie.title ? (
@@ -79,7 +80,7 @@ function Fav(props) {
                             ) : null
                         ))
                     ) : (
-                        <Text style={{ color: 'white', fontSize: 18, textAlign: 'center', marginTop: 50 }}>
+                        <Text style={{ color: 'grey', fontSize: 28, textAlign: 'center', marginTop: 250 }}>
                             No favorites added yet.
                         </Text>
                     )}

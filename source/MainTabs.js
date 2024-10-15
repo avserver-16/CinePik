@@ -44,10 +44,13 @@ const MainTabs = ({ }) => {
                     paddingTop: 15,
                     paddingHorizontal: 0,
                     bottom: 0,
-                    left: 0,
+                    left: 12,
                     right: 0,
                     backgroundColor: 'black',
-                    overflow: 'hidden', // Ensure content does not overflow
+                    overflow: 'hidden', 
+                    marginBottom:10,
+                    borderRadius:100,
+                    width:370// Ensure content does not overflow
                 },
                 tabBarShowLabel: false,
             })}

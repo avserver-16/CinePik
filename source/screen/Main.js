@@ -7,11 +7,12 @@ import { UserContext } from './UserContext';
 
 function Main() {
     const [movieList, setMovielist] = useState([]);
-    const { favMovies, toggleFavorite, iconColor } = useContext(UserContext);
+    const { favMovies, toggleFavorite,iconColor } = useContext(UserContext);
     
     const getmovieurl = async () => {
-        const json = await res.json();
+        
         const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=e3894156f041a0031087bec3a769ec9a');
+        const json = await res.json();
         try {
             
             if (!res.ok) {
@@ -19,7 +20,8 @@ function Main() {
             }
 
            
-            console.log('API Response:', json); 
+           // console.log('API Response:', json); 
+           // console.log('Response:', res); 
             
             if (json && json.results) {
                 setMovielist(json.results);
@@ -36,7 +38,8 @@ function Main() {
     }, []);
 
     const favPress = (movie) => {
-        toggleFavorite(movie);  
+        toggleFavorite(movie); 
+        
     };
 
     return (
@@ -102,7 +105,7 @@ function Main() {
                                         name='heart' 
                                         style={{ fontWeight: 900 }}
                                         color={iconColor[movie.id] || 'white'}
-                                        size={24} 
+                                        size={30} 
                                     />
                                 </TouchableOpacity>
                             </View>
