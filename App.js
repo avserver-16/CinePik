@@ -9,11 +9,19 @@ import MainTabs from './source/MainTabs';
 import Fav from './source/screen/Fav';
 import Profile from './source/screen/Profile';
 import { UserProvider } from './source/screen/UserContext';
+import { useFonts } from 'expo-font';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   const [inputName, setInputName] = React.useState('');
+  const [fontsLoaded]=useFonts({
+    "xlight":require("./Fonts/Changa/static/Changa-ExtraLight.ttf"),
+    "light":require("./Fonts/Changa/static/Changa-Light.ttf"),
+    "medium":require("./Fonts/Changa/static/Changa-Medium.ttf"),
+    "regular":require("./Fonts/Changa/static/Changa-Regular.ttf"),
+    "bold":require("./Fonts/Changa/static/Changa-Bold.ttf")
+  })
 
   return (
     <UserProvider>
