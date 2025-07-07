@@ -44,7 +44,7 @@ function Main() {
 
     return (
         <Background>
-            <View style={{ height: '100%', width: '100%', backgroundColor: 'rgba(5, 0, 0,0.5)', top: -470, }}>
+            <View style={{ height: '105%', width: '100%', backgroundColor: 'rgba(5, 0, 0,0.5)', top: -450, }}>
                 <Text
                     style={{
                         fontSize: 45,
@@ -63,7 +63,7 @@ function Main() {
                 </Text>
                 <ScrollView
                     showsVerticalScrollIndicator={false}
-                    style={{ marginTop: 0, marginBottom: 70 }}
+                    style={{ marginTop: 0, marginBottom: 100 }}
                 >
                     {movieList.map((movie) => (
                         movie.poster_path && movie.title ? (
@@ -89,7 +89,7 @@ function Main() {
                                     }}
                                 />
                                 <View style={{ marginLeft: 20, flex: 1 }}>
-                                    <Text style={{ fontSize: 24, color: 'white',fontFamily:'bold'}} numberOfLines={1}>
+                                    <Text style={{ fontSize: 24, color: '#FF9100',fontFamily:'bold'}} numberOfLines={1}>
                                         {movie.title}
                                     </Text>
                                     <Text style={{ fontSize: 14, color: 'white', marginTop: 5 ,fontFamily:'xlight'}} numberOfLines={3}>

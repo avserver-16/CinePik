@@ -20,7 +20,7 @@ const Home = ({ navigation }) => {
         }}
           onPress={() => navigation.navigate('Signup')}>
           <Text style={{ fontSize: 30, textAlign: 'center', color: '#FF9100', fontWeight: 200, fontFamily: 'regular' }}>Signup</Text></TouchableOpacity>
-        <View style={{ width: '100%', height: 200, backgroundColor: 'black', top: 330, borderTopEndRadius: 30, borderTopLeftRadius: 30 }}>
+        <View style={{ width: '100%', height: 200, backgroundColor: 'black', top: 250, borderTopEndRadius: 30, borderTopLeftRadius: 30 }}>
           <TouchableOpacity style={{
             height: 60, width: 300, backgroundColor: 'black', borderRadius: 16, borderWidth: 2, borderColor: '#FF9100', borderStyle: 'dashed',
             alignItems: 'center', justifyContent: 'center', alignSelf: 'center', top: 30

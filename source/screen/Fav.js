@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { View, ImageBackground, TouchableOpacity, Text, ScrollView, Image } from 'react-native';
 import Background from './Background';
 import { UserContext } from './UserContext';
-import { Feather } from "@expo/vector-icons";
+import { Feather, MaterialIcons } from "@expo/vector-icons";
 
 function Fav(props) {
     const [iconColor, setIconColor] = useState('white');
@@ -30,7 +30,7 @@ function Fav(props) {
                     Your Favorites
                 </Text>
 
-                <ScrollView showsVerticalScrollIndicator={false} style={{ marginTop: -20, marginBottom: 80 }}>
+                <ScrollView showsVerticalScrollIndicator={false} style={{ marginTop: -20, marginBottom: 90 }}>
                     {favMovies && favMovies.length > 0 ? (
                         favMovies.map((movie) =>
                             movie.poster_path && movie.title ? (
@@ -43,7 +43,7 @@ function Fav(props) {
                                         borderRadius: 16,
                                         marginVertical: 8,
                                         marginHorizontal: 16,
-                                        height: 100,
+                                        paddingVertical: 10,
                                         width: '95%',
                                         alignSelf: 'center',
                                         paddingHorizontal: 10,
@@ -53,8 +53,8 @@ function Fav(props) {
                                     <Image
                                         source={{ uri: `https://image.tmdb.org/t/p/w500${movie.poster_path}` }}
                                         style={{
-                                            height: 60,
-                                            width: 40,
+                                            height: 100,
+                                            width: 60,
                                             borderRadius: 6,
                                             resizeMode: 'cover',
                                         }}
@@ -66,9 +66,9 @@ function Fav(props) {
                                             numberOfLines={1}
                                             style={{
                                                 flex: 1,
-                                                color: 'white',
-                                                fontSize: 14,
-                                                fontWeight: '600',
+                                                color: '#FF9100',
+                                                fontSize: 18,
+                                                fontFamily: 'regular'
                                             }}
                                         >
                                             {movie.title}
@@ -84,10 +84,11 @@ function Fav(props) {
                     ) : (
                         <Text
                             style={{
-                                color: 'grey',
+                                color: 'white',
                                 fontSize: 20,
                                 textAlign: 'center',
                                 marginTop: 250,
+                                fontFamily: 'regular'
                             }}
                         >
                             No favorites added yet.
@@ -95,8 +96,8 @@ function Fav(props) {
                     )}
 
                 </ScrollView>
-            </View>
-        </Background>
+            </View >
+        </Background >
     );
 }
 
